@@ -1,5 +1,5 @@
-import SearchBox from '@/components/home/SearchBox'
-import SearchList from '@/components/home/SearchList'
+import SearchBox from '@/views/home/SearchBox'
+import SearchList from '@/views/home/SearchList'
 
 const page: React.FC<any> = () => {
 
