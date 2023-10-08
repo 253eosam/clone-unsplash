@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,18 +9,18 @@ const Wrap = styled.header`
 
   position: fixed;
   top: 0;
-	left: 0;
-	right: 0;
-	z-index: 1000;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 
   height: 40px;
   background: #fff;
   padding: 11px 20px;
-  
+
   display: flex;
   justify-content: space-between;
 `
-export default function HomeHeader() {
+const HomeHeader: React.FC<any> = () => {
   return (
     <Wrap>
       <Link href="/">
@@ -32,3 +32,5 @@ export default function HomeHeader() {
     </Wrap>
   )
 }
+
+export default HomeHeader

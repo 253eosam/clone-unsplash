@@ -1,7 +1,8 @@
 import SearchBox from '@/components/home/SearchBox'
 import SearchList from '@/components/home/SearchList'
 
-export default function HomePage() {
+const page: React.FC<any> = () => {
+
   return (
     <main>
       <SearchBox></SearchBox>
@@ -9,3 +10,5 @@ export default function HomePage() {
     </main>
   )
 }
+
+export default page

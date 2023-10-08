@@ -40,7 +40,8 @@ const SearchInput = styled.div`
   margin-top: 24px;
 `
 
-export default function SearchBox() {
+const SearchBox: React.FC<any> = () => {
+
   return (
     <SearchBoxWrap>
       <SearchForm>
@@ -52,3 +53,5 @@ export default function SearchBox() {
     </SearchBoxWrap>
   )
 }
+
+export default SearchBox
