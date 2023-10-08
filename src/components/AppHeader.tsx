@@ -5,9 +5,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 const Wrap = styled.header`
-  border: red 1px solid;
-
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;

@@ -1,9 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import StyledComponentsRegistry from '@/lib/registry'
-import HomeHeader from '@/components/home/HomeHeader'
+import AppHeader from '@/components/AppHeader'
 
 import { Inter } from 'next/font/google'
+import AppContent from '@/components/AppContent'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,10 +21,12 @@ const layout: React.FC<any> = ({
 
   return (
     <html>
-    <body className={inter.className}>
+    <body className={inter.className} style={{ position: 'relative' }}>
       <StyledComponentsRegistry>
-        <HomeHeader/>
+        <AppHeader/>
+        <AppContent>
           {children}
+        </AppContent>
       </StyledComponentsRegistry>
     </body>
   </html>
