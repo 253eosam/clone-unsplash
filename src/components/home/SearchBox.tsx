@@ -6,7 +6,6 @@ const SearchBoxWrap = styled.div`
   background-image: url('https://images.unsplash.com/photo-1695632844647-d9252f33100d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1vZi10aGUtZGF5fHx8fGVufDB8fHx8fA%3D%3D&dpr=1&auto=format%2Ccompress&fit=crop&w=1599&h=594');
   background-size: cover;
   background-repeat: no-repeat;
-  border: 5px solid green;
   height: 600px;
   margin-bottom: 48px;
 `
