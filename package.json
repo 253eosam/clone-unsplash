@@ -13,7 +13,8 @@
     "react": "^18",
     "react-dom": "^18",
     "recoil": "^0.7.7",
-    "styled-components": "^6.0.8"
+    "styled-components": "^6.0.8",
+    "unsplash-js": "^7.0.18"
   },
   "devDependencies": {
     "@types/node": "^20",

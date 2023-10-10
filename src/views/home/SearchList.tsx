@@ -2,7 +2,11 @@
 
 import styled from "styled-components";
 import PictureList from "@/components/pictureList/PictureList";
-import { IPictureItem } from "../../components/pictureList/PictureItem";
+import { IPictureItem } from "@/models/Picture";
+
+interface Props {
+  pictures: IPictureItem[]
+}
 
 const Wrap = styled.div`
   display: flex;
@@ -13,13 +17,7 @@ const Wrap = styled.div`
   margin: 0 auto;
 `
 
-const SearchList: React.FC<any> = () => {
-
-  const pictures: IPictureItem[] = [
-    { src: 'https://placehold.co/', height: 410, alt: 'https://placehold.co/' },
-    { src: 'https://placehold.co/', height: 310, alt: 'https://placehold.co/' },
-    { src: 'https://placehold.co/', height: 210, alt: 'https://placehold.co/' },
-  ]
+const SearchList: React.FC<Props> = ({ pictures }) => {
 
   return  (
     <Wrap>

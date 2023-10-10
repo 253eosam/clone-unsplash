@@ -1,7 +1,8 @@
 "use client"
 
 import styled from "styled-components"
-import PictureItem, { IPictureItem } from "./PictureItem"
+import PictureItem from "./PictureItem"
+import { IPictureItem } from "@/models/Picture"
 
 interface Props {
   direction?: 'row' | 'column'
