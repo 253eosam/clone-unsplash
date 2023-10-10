@@ -10,16 +10,17 @@ import { IGetPhotos, PictureItem } from '@/models/Picture'
 
 const page: React.FC<any> = () => {
   const [pictures, setPictures] = useRecoilState(picturesState)
-  const api = unsplashApi()
+  const unsplash = unsplashApi()
   
   useEffect(() => {
     (async () => {
-      const result = await api.search
-        .getPhotos({ query: "cat", orientation: "landscape" })
-
-      console.log(result);
       
-      setPictures(() => (result.response?.results.map(item => (new PictureItem(item as any))) ?? [] ))
+      const result = await unsplash.photos.getRandom({ count:10 })
+      if (!result.response) return
+      console.log(result.response);
+      const list = Array.isArray(result.response) ? result.response : [result.response] 
+      
+      setPictures(() => (list.map(item => (new PictureItem(item as any)))))
     })()
   }, []);
   

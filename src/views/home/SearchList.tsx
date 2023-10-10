@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import PictureList from "@/components/pictureList/PictureList";
 import { IPictureItem } from "@/models/Picture";
+import { shuffle } from "lodash";
 
 interface Props {
   pictures: IPictureItem[]
@@ -23,7 +24,7 @@ const SearchList: React.FC<Props> = ({ pictures }) => {
     <Wrap>
       <PictureList direction="column" pictures={pictures}  />
       <PictureList direction="column" pictures={[...pictures].reverse()}  />
-      <PictureList direction="column" pictures={pictures} />
+      <PictureList direction="column" pictures={shuffle(pictures)} />
     </Wrap>
   )
 }

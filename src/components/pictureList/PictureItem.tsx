@@ -1,7 +1,7 @@
 'use client'
 
 import { IPictureItem } from '@/models/Picture'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import styled from 'styled-components'
 
 const Wrap = styled.div`
@@ -10,12 +10,17 @@ const Wrap = styled.div`
   margin-bottom: 20px;
 `
 
-const PictureItem: React.FC<IPictureItem> = ({ height, alt, fullUrl, thumbUrl }) => {
+const PictureItem: React.FC<IPictureItem> = ({ height, width, alt, fullUrl, thumbUrl }) => {
   const WIDTH_SIZE = 410
-
+  const h = WIDTH_SIZE * height / width
   return (
     <Wrap>
-      <Image loader={({ src, width }) => `${src}${WIDTH_SIZE}`} src={thumbUrl} width={WIDTH_SIZE} height={200} alt={alt} />
+      <Image  
+        src={thumbUrl} 
+        width={WIDTH_SIZE}
+        height={h}
+        alt={alt}
+      />
     </Wrap>
   )
 }

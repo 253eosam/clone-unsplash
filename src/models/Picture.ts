@@ -8,6 +8,7 @@ interface Result {
   height: number;
   urls: Urls;
   alt_description: string;
+  width: number
 }
 
 interface Urls {
@@ -23,6 +24,7 @@ export interface IPictureItem {
   fullUrl: string
   thumbUrl: string
   height: number
+  width: number
   alt: string
 }
 
@@ -30,12 +32,14 @@ export class PictureItem implements IPictureItem {
   fullUrl: string
   thumbUrl: string
   height: number
+  width: number
   alt: string
 
-  constructor({ height, urls, alt_description }: Result) {
+  constructor({ height, width, urls, alt_description }: Result) {
     this.fullUrl = urls.full
-    this.thumbUrl = urls.thumb
+    this.thumbUrl = urls.regular
     this.height = height
+    this.width = width
     this.alt = alt_description
   }
 }
