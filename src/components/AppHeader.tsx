@@ -21,8 +21,8 @@ const Wrap = styled.header`
 const HomeHeader: React.FC<any> = () => {
   return (
     <Wrap>
-      <Link href="/">
-        <Image src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Unsplash_wordmark_logo.svg" alt="Logo" width={100} height={32} priority />
+      <Link href="/" >
+        <Image src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Unsplash_wordmark_logo.svg" alt="Logo" width={100} height={32}  />
       </Link>
       <Link href="/bookmark">
         <p>BookMark</p>

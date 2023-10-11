@@ -35,9 +35,9 @@ const Bookmark = styled.button`
     }
 `
 
-const PictureItem: React.FC<IPictureItem> = ({ id, height, width, alt, fullUrl, thumbUrl }) => {
+const PictureItem: React.FC<IPictureItem> = ({ id, height, width, alt, fullUrl, thumbUrl, isForceHeight }) => {
   const WIDTH_SIZE = 410
-  const h = WIDTH_SIZE * height / width
+  const h = isForceHeight ? WIDTH_SIZE : WIDTH_SIZE * height / width
   const { hasBookmark, switchBookmark } = useBookmark()
   const [isBookmark , setIsBookmark] = useState(hasBookmark(id) ? 'show' : 'hidden')
   const handleButtonClick = () => {
@@ -50,6 +50,7 @@ const PictureItem: React.FC<IPictureItem> = ({ id, height, width, alt, fullUrl, 
         width={WIDTH_SIZE}
         height={h}
         alt={alt}
+        priority
       />
       <Bookmark onClick={handleButtonClick} className={isBookmark} >Bookmark</Bookmark>
     </Wrap>

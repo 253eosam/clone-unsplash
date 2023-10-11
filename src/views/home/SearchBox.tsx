@@ -59,7 +59,7 @@ const SearchBox: React.FC<Props> = ({ search }) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams()
-  const [query, setQuery] = useState(`${searchParams.get(SEARCH_QUERY_KEY)}`)
+  const [query, setQuery] = useState(`${searchParams.get(SEARCH_QUERY_KEY) ?? ''}`)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(() => e.target.value)

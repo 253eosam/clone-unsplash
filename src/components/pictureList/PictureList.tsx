@@ -8,6 +8,7 @@ interface Props {
   direction?: 'row' | 'column'
   pictures?: IPictureItem[]
   spaceSize?: number
+  style?: any
 }
 
 const Wrap = styled.div`
@@ -19,10 +20,10 @@ const PictureItemWrap = styled.div`
   }
 `
 
-const PictureList: React.FC<Props> = ({ direction = 'row', pictures, spaceSize = 5 }) => {
+const PictureList: React.FC<Props> = ({ direction = 'row', pictures, spaceSize = 5, style }) => {
 
   return (
-    <Wrap style={{ flexDirection: direction }}>
+    <Wrap style={{ ...style, flexDirection: direction }}>
         { 
           pictures &&
           pictures.map((picture, idx) => (

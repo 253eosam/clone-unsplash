@@ -4,7 +4,7 @@ import { picturesState } from '@/atoms'
 import unsplashApi from '@/apis/unsplashApi'
 import SearchBox from '@/views/home/SearchBox'
 import SearchList from '@/views/home/SearchList'
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { useRecoilState } from 'recoil'
 import { IGetPhotos, PictureItem } from '@/models/Picture'
 import { useSearchParams } from 'next/navigation'
@@ -37,9 +37,9 @@ const page: React.FC<any> = () => {
   }
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     search(query)
-  }, []);
+  }, [query]);
 
   return (
     <main>

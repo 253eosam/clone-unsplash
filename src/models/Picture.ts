@@ -28,6 +28,7 @@ export interface IPictureItem {
   height: number
   width: number
   alt: string
+  isForceHeight?: boolean
 }
 
 export class PictureItem implements IPictureItem {
@@ -37,13 +38,15 @@ export class PictureItem implements IPictureItem {
   height: number
   width: number
   alt: string
+  isForceHeight: boolean
 
-  constructor({ id, height, width, urls, alt_description }: Result) {
+  constructor({ id, height, width, urls, alt_description, isForceHeight = false }: Result & { isForceHeight?: boolean}) {
     this.id = id
     this.fullUrl = urls.full
     this.thumbUrl = urls.regular
     this.height = height
     this.width = width
     this.alt = alt_description
+    this.isForceHeight = isForceHeight
   }
 }
