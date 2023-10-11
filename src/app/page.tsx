@@ -18,7 +18,7 @@ const page: React.FC<any> = () => {
 
   const search = (query: string) => {
     const fetchRandom = async () => {
-      const result = await unsplash.photos.getRandom({ count:10 })
+      const result = await unsplash.photos.getRandom({ count: 30 })
       if (!result.response) return
       const list = Array.isArray(result.response) ? result.response : [result.response] 
       
@@ -26,7 +26,7 @@ const page: React.FC<any> = () => {
     }
     
     const fetchByQuery = async (query: string) => {
-      const result = await unsplash.search.getPhotos({ query: query })
+      const result = await unsplash.search.getPhotos({ query: query, perPage: 30 })
       if (!result.response) return
       const list = result.response.results
       

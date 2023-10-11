@@ -22,9 +22,9 @@ const SearchList: React.FC<Props> = ({ pictures }) => {
 
   return  (
     <Wrap>
-      <PictureList direction="column" pictures={pictures}  />
-      <PictureList direction="column" pictures={[...pictures].reverse()}  />
-      <PictureList direction="column" pictures={shuffle(pictures)} />
+      <PictureList direction="column" pictures={pictures.slice(0,10)}  />
+      <PictureList direction="column" pictures={pictures.slice(10,20)}  />
+      <PictureList direction="column" pictures={pictures.slice(20,30)} />
     </Wrap>
   )
 }

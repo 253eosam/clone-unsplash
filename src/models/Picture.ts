@@ -5,6 +5,7 @@ export interface IGetPhotos {
 }
 
 interface Result {
+  id: string
   height: number;
   urls: Urls;
   alt_description: string;
@@ -21,6 +22,7 @@ interface Urls {
 }
 
 export interface IPictureItem {
+  id: string
   fullUrl: string
   thumbUrl: string
   height: number
@@ -29,13 +31,15 @@ export interface IPictureItem {
 }
 
 export class PictureItem implements IPictureItem {
+  id: string
   fullUrl: string
   thumbUrl: string
   height: number
   width: number
   alt: string
 
-  constructor({ height, width, urls, alt_description }: Result) {
+  constructor({ id, height, width, urls, alt_description }: Result) {
+    this.id = id
     this.fullUrl = urls.full
     this.thumbUrl = urls.regular
     this.height = height
