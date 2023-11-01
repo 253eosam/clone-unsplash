@@ -13,6 +13,9 @@ interface Props {
 
 const Wrap = styled.div`
   display: flex;
+  height: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
 `
 const PictureItemWrap = styled.div`
   &:last-child {

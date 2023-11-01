@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import styled from 'styled-components'
 
 const Wrap = styled.header`
@@ -17,16 +18,32 @@ const Wrap = styled.header`
 
   display: flex;
   justify-content: space-between;
+
+  .link {
+    text-decoration: underline; 
+  }
 `
+
+const GoToBookMark = styled.p`
+  line-height: 40px;
+  font-size: 20px;
+`
+
 const HomeHeader: React.FC<any> = () => {
+  const pathname = usePathname()
+
   return (
     <Wrap>
       <Link href="/" >
         <Image src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Unsplash_wordmark_logo.svg" alt="Logo" width={100} height={32}  />
       </Link>
-      <Link href="/bookmark">
-        <p>BookMark</p>
-      </Link>
+      {
+        pathname === '/' && (
+          <Link className='link' href="/bookmark">
+            <GoToBookMark>Go to bookmark ★</GoToBookMark>
+          </Link>
+        )
+      }
     </Wrap>
   )
 }

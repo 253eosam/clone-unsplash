@@ -10,11 +10,15 @@ import styled from 'styled-components'
 const Content = styled.main`
   display: flex;
   justify-content: center;
+  padding: 3rem 10rem ;
 `
 const H1 = styled.h1`
-  font-size: 2rem;
+  font-size: 5rem;
   text-align: center;
   margin: 20px auto;
+  color: #ffffff;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
 `
 
 const page: React.FC<any> = () => {
